@@ -1,15 +1,20 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Rodrigo Nery - Desenvolvedor Web</title>
-  <meta name="description" content="Cartão de visitas digital de Rodrigo Nery, desenvolvedor web com experiência em Python, PHP, JavaScript e automações para internet.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Rodrigo Nery">
-  <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Cartão de visitas digital de Rodrigo Nery, desenvolvedor web com experiência em Python, PHP, JavaScript e automações para internet." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Rodrigo Nery" />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     * {
       margin: 0;
@@ -31,7 +36,7 @@
       border: 1px solid #ccc;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
       max-width: 400px;
       width: 100%;
       text-align: left;
@@ -86,7 +91,7 @@
     .news-section {
       margin-top: 20px;
       text-align: left;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Ubuntu', sans-serif;
     }
     .news-section h3 {
       margin-bottom: 10px;
@@ -166,44 +171,39 @@
       </a>
     </div>
     <div class="news-section">
-      <h3>📰 Brasil</h3>
+      <h3>📰 Notícias do G1</h3>
       <div class="spinner" id="spinner-br"></div>
       <ul id="news-br"></ul>
-      <h3>🌍 Mundo</h3>
-      <div class="spinner" id="spinner-world"></div>
-      <ul id="news-world"></ul>
     </div>
   </main>
   <script>
-    const apiKey = 'SUA_NEWSDATA_API_KEY';
-    const endpoints = {
-      br: `https://newsdata.io/api/1/news?apikey=${apiKey}&country=br&language=pt`,
-      world: `https://newsdata.io/api/1/news?apikey=${apiKey}&category=world&language=en`
-    };
+    function fetchRSS(url, callback) {
+      fetch(url)
+        .then(response => response.json())
+        .then(data => callback(data))
+        .catch(() => {
+          document.getElementById('spinner-br').style.display = 'none';
+          const ul = document.getElementById('news-br');
+          ul.innerHTML = '<li>Erro ao carregar notícias.</li>';
+        });
+    }
 
-    async function loadNews(id, url, spinnerId, max = 5) {
-      const res = await fetch(url);
-      const data = await res.json();
-      const list = document.getElementById(id);
-      const spinner = document.getElementById(spinnerId);
+    function renderNews(data) {
+      const spinner = document.getElementById('spinner-br');
       spinner.style.display = 'none';
-      data.results.slice(0, max).forEach(item => {
+
+      const list = document.getElementById('news-br');
+      data.items.slice(0, 5).forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
         list.appendChild(li);
       });
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      loadNews('news-br', endpoints.br, 'spinner-br');
-      loadNews('news-world', endpoints.world, 'spinner-world');
-
-      const card = document.querySelector('.card');
-      card.style.opacity = 0;
-      setTimeout(() => {
-        card.style.transition = 'opacity 1s';
-        card.style.opacity = 1;
-      }, 300);
+    document.addEventListener('DOMContentLoaded', () => {
+      const rssUrl = encodeURIComponent('https://g1.globo.com/rss/g1/');
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+      fetchRSS(apiUrl, renderNews);
     });
   </script>
 </body>
