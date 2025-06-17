@@ -1,45 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Gerado by Rodrigo Nery</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Rodrigo Nery - Desenvolvedor Web</title>
+  <meta name="description" content="Cartão de visitas digital de Rodrigo Nery, desenvolvedor web com experiência em Python, PHP, JavaScript e automações para internet.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Rodrigo Nery">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f6f7; color: #333; margin: 0; padding: 20px; }
-    header { text-align: center; margin-bottom: 30px; }
-    section { background: #fff; padding: 15px 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    h1 { margin: 0; }
-    h2 { color: #005FAE; margin-top: 0; }
-    p { margin: 8px 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background-color: #333;
+    }
+    .social {
+      margin-top: 20px;
+    }
+    .social a {
+      color: #000;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      color: #666;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Resumo do Dia — <?php echo 'oi'; ?></h1>
-  </header>
-
-  <section>
-    <h2>🌍 Conflito Irã–Israel</h2>
-    <p>📡 Israel atacou rádio estatal do Irã e instalações nucleares – o Irã reagiu com mísseis e drones, elevando risco global.</p>
-  </section>
-
-  <section>
-    <h2>🤝 Trump e G7</h2>
-    <p>Trump deixou o G7 mais cedo para atender crise; pediu evacuação de civis iranianos e rechaçou declarações conjuntas.</p>
-    <p>Mercados reagiram positivamente com leve alta nas principais bolsas.</p>
-  </section>
-
-  <section>
-    <h2>💹 Economia & Mercados</h2>
-    <p>Petróleo caiu, bolsas resistiram, bitcoin atingiu ~US$ 107 000, e juros globais aguardam decisões.</p>
-  </section>
-
-  <section>
-    <h2>🇧🇷 Brasil</h2>
-    <p>📺 TV Brasil exibiu denúncias de violência política contra mulheres.</p>
-    <p>🏦 Caixa iniciou pagamento do Bolsa Família para cerca de 20,5 milhões de famílias.</p>
-  </section>
-  <footer>
-    <p style="text-align:center; font-size:0.9em;">Fonte: principais agências, 17 de junho de 2025.</p>
-  </footer>
+  <main class="card">
+    <h1>Rodrigo Nery</h1>
+    <h2>Desenvolvedor Web | Python • PHP • JavaScript</h2>
+    <p>Crio sistemas rápidos, limpos e eficientes para internet. Sites, automações e tudo que respira código.</p>
+    <a class="btn" href="mailto:rodrigonery@hotmail.com.br">
+      <i class="fas fa-envelope"></i> Fale comigo
+    </a>
+    <div class="social">
+      <a href="https://github.com/rodrigo" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://instagram.com/rodrigonery_" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </main>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const card = document.querySelector('.card');
+      card.style.opacity = 0;
+      setTimeout(() => {
+        card.style.transition = 'opacity 1s';
+        card.style.opacity = 1;
+      }, 300);
+    });
+  </script>
 </body>
 </html>
