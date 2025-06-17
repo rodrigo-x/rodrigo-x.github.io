@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Resumo 16 Jun/25</title>
+  <title>Gerado by Rodrigo Nery</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f5f6f7; color: #333; margin: 0; padding: 20px; }
     header { text-align: center; margin-bottom: 30px; }
