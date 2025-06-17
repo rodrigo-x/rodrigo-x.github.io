@@ -14,6 +14,9 @@
 </head>
 <body>
   <header>
+    <?php
+      echo date('l jS \of F Y h:i:s A');
+    ?>
     <h1>Resumo do Dia — 16 de junho de 2025</h1>
   </header>
 
