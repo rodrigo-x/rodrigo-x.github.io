@@ -14,7 +14,7 @@
 </head>
 <body>
   <header>
-    <h1>Resumo do Dia — <?php echo date('l jS \of F Y h:i:s A'); ?></h1>
+    <h1>Resumo do Dia — <?php echo 'oi'; ?></h1>
   </header>
 
   <section>
