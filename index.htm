@@ -219,6 +219,7 @@
     <main class="card" role="main">
       <h1>Rodrigo Nery</h1>
       <h2>Desenvolvedor // CyberSecurity <i class="fa-solid fa-terminal"></i></h2>
+      <p id="terminal-text"></p>
       <p>Crio sistemas rápidos, limpos e eficientes para internet ou intranet.</p>
       <p>Aplicativos, sites, automações e tudo que respira código.</p>
       <div class="btn-container">
@@ -348,6 +349,34 @@
 
     initParticles();
     animate();
+  const terminalText = [
+    "Crio sistemas rápidos, limpos e eficientes para internet ou não.",
+    "Sites, aplicativos, automações e tudo que respira código."
+  ];
+  
+  const terminalElement = document.getElementById("terminal-text");
+  let textIndex = 0;
+  let charIndex = 0;
+
+  function typeText() {
+    if (textIndex < terminalText.length) {
+      const currentText = terminalText[textIndex];
+      if (charIndex < currentText.length) {
+        terminalElement.innerHTML += currentText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 35);
+      } else {
+        terminalElement.innerHTML += "<br>";
+        charIndex = 0;
+        textIndex++;
+        setTimeout(typeText, 400);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeText();
+  });
   </script>
 </body>
 </html>
