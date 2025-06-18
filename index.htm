@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Rodrigo Nery</title>
+  <meta name="description" content="Cartão de visitas digital de Rodrigo Nery, desenvolvedor e analista de TI, com experiência em Python, PHP, JavaScript e automações para internet." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Rodrigo Nery" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html, body {
+      height: auto;
+      min-height: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      background: #1a1a1a;
+      color: #fff;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding: 40px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      max-width: 800px;
+      margin: auto;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    main.card {
+      background: #222;
+      border-radius: 20px;
+      padding: 28px 32px 40px;
+      width: 100%;
+      box-shadow: 0 0 30px #0ff;
+      transition: 0.3s;
+      color: #eee;
+    }
+    main.card:hover {
+      box-shadow: 0 0 60px #0ff, 0 0 20px #08f;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #0ff;
+      text-align: left;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    h2 i {
+      color: #0ff;
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      color: #ddd;
+      text-align: left;
+    }
+    .btn {
+      background: #0ff;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      display: inline-block;
+      margin: 0 auto 32px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      font-size: 14px;
+    }
+    .btn:hover {
+      transform: rotateX(15deg) rotateY(10deg) scale(1.05);
+      box-shadow: 0 0 30px #0ff, 0 0 60px #0ff;
+    }
+    .btn i {
+      margin-right: 8px;
+    }
+    .btn-container {
+      text-align: center;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .social a {
+      color: #0ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+    .social a i {
+      font-size: 18px;
+    }
+    .social a:hover {
+      transform: scale(1.1);
+    }
+    .news-section {
+      margin-top: 32px;
+      background: #111;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 0 20px #08f;
+      color: #0ff;
+      font-size: 14px;
+    }
+    .news-section h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #0ff;
+      padding-bottom: 4px;
+      color: #0ff;
+    }
+    .news-section ul {
+      list-style: none;
+      padding-left: 0;
+      color: #0ff;
+    }
+    .news-section li {
+      margin-bottom: 8px;
+    }
+    .news-section li a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    .news-section li a:hover {
+      text-decoration: underline;
+    }
+    .spinner {
+      border: 4px solid #333;
+      border-top: 4px solid #0ff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      background: #111;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px 80px;
+        font-size: 13px;
+      }
+      main.card {
+        padding: 24px 20px 36px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+      h2 {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      .btn {
+        font-size: 13px;
+        padding: 10px 16px;
+        margin-bottom: 28px;
+      }
+      .social {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <div class="container">
+    <main class="card" role="main">
+      <h1>Rodrigo Nery</h1>
+      <h2><i class="fa-solid fa-terminal"></i> Desenvolvedor / LINUX / CyberSecurity</h2>
+      <p>Crio sistemas rápidos, limpos e eficientes para internet ou não.</p>
+      <p>Sites, aplicativos, automações e tudo que respira código.</p>
+      <div class="btn-container">
+        <a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i> Fale comigo</a>
+      </div>
+
+      <div class="social">
+        <a href="https://github.com/rodrigo-x/" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://instagram.com/rodrigonery_" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/5574981277696" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <section class="news-section" aria-label="Últimas notícias">
+        <h3>📰 Últimas notícias</h3>
+        <div class="spinner" id="spinner-br"></div>
+        <ul id="news-br"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function fetchRSS(url, callback) {
+      fetch(url)
+        .then(res => res.json())
+        .then(data => callback(data))
+        .catch(() => {
+          document.getElementById("spinner-br").style.display = "none";
+          document.getElementById("news-br").innerHTML = "<li>Erro ao carregar notícias.</li>";
+        });
+    }
+
+    function renderNews(data) {
+      document.getElementById("spinner-br").style.display = "none";
+      let newsList = document.getElementById("news-br");
+      newsList.innerHTML = "";
+      data.items.slice(0,5).forEach(item => {
+        let li = document.createElement("li");
+        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
+        newsList.appendChild(li);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let rssUrl = encodeURIComponent("https://g1.globo.com/rss/g1/");
+      let apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+      fetchRSS(apiUrl, renderNews);
+    });
+
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const maxParticles = 70;
+    const maxDistance = 120;
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 1.2;
+        this.vy = (Math.random() - 0.5) * 1.2;
+        this.size = 2;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#0ff';
+        ctx.fill();
+      }
+    }
+
+    function connectParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          let dx = particles[i].x - particles[j].x;
+          let dy = particles[i].y - particles[j].y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDistance) {
+            ctx.strokeStyle = `rgba(0, 255, 255, ${1 - dist / maxDistance})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectParticles();
+      requestAnimationFrame(animate);
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < maxParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    initParticles();
+    animate();
+  </script>
+</body>
+</html>
