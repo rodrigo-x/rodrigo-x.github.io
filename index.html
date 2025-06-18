@@ -8,30 +8,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Rodrigo Nery" />
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter','Ubuntu',sans-serif;background:linear-gradient(145deg,#f0f0f0,#e6e6e6);color:#111;padding:40px 24px;height:100vh;display:flex;flex-direction:column}.container{display:flex;flex:1;gap:24px;max-width:1200px;margin:auto}.card{background:#fff;border-radius:20px;padding:32px;flex:2;box-shadow:0 12px 32px rgba(0,0,0,.08);transition:.3s ease}.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.12)}h1{font-size:30px;font-weight:600;margin-bottom:6px}h2{font-size:18px;color:#555;font-weight:400;margin-bottom:18px}p{font-size:15px;color:#333;margin-bottom:24px;line-height:1.6}.btn{background-color:#111;color:#fff;padding:12px 20px;border:none;border-radius:8px;text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background-color .3s ease}.btn:hover{background-color:#333}.social{margin-top:28px}.social a{color:#000;font-size:20px;margin-right:18px;transition:color .3s ease}.social a:hover{color:#666}.news-section{background:#fff;border-radius:20px;padding:24px;flex:1;box-shadow:0 12px 32px rgba(0,0,0,.08);overflow:auto}.news-section h3{font-size:16px;margin-bottom:10px;border-bottom:1px solid #ccc;padding-bottom:4px;font-weight:600}.news-section ul{list-style:none;padding-left:0}.news-section li{margin-bottom:8px}.news-section li a{color:#005FAE;text-decoration:none;font-weight:500}.news-section li a:hover{text-decoration:underline}.spinner{border:4px solid #f3f3f3;border-top:4px solid #000;border-radius:50%;width:24px;height:24px;animation:spin 1s linear infinite;margin:10px 0}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}footer{margin-top:40px;font-size:12px;color:#aaa;text-align:center}@media(max-width:900px){.container{flex-direction:column}.news-section,.card{width:100%}}</style>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box}
+    body {
+      font-family:'Inter',sans-serif;
+      background:#fff;
+      color:#000;
+      padding:40px 24px;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .container {
+      display:flex;
+      flex:1;
+      max-width:800px;
+      margin:auto;
+    }
+    .card {
+      background:#fff;
+      border:1px solid #000;
+      border-radius:16px;
+      padding:32px;
+      width:100%;
+      box-shadow:4px 4px 0 #000;
+      transition:.3s ease;
+    }
+    .card:hover {
+      transform:translateY(-3px);
+      box-shadow:6px 6px 0 #000;
+    }
+    h1 {
+      font-size:32px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    h2 {
+      font-size:16px;
+      color:#444;
+      font-weight:400;
+      margin-bottom:24px;
+    }
+    p {
+      font-size:15px;
+      color:#111;
+      margin-bottom:16px;
+      line-height:1.6;
+    }
+    .btn {
+      background-color:#000;
+      color:#fff;
+      padding:12px 20px;
+      border:none;
+      border-radius:6px;
+      text-decoration:none;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:opacity .3s ease;
+    }
+    .btn:hover {
+      opacity:0.8;
+    }
+    .social {
+      margin-top:24px;
+    }
+    .social a {
+      color:#000;
+      font-size:20px;
+      margin-right:16px;
+      transition:opacity .3s ease;
+    }
+    .social a:hover {
+      opacity:0.6;
+    }
+    .news-section {
+      margin-top:40px;
+      border-top:1px solid #000;
+      padding-top:24px;
+    }
+    .news-section h3 {
+      font-size:16px;
+      margin-bottom:12px;
+      font-weight:600;
+    }
+    .news-section ul {
+      list-style:none;
+      padding-left:0;
+    }
+    .news-section li {
+      margin-bottom:8px;
+    }
+    .news-section li a {
+      color:#000;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .news-section li a:hover {
+      text-decoration:underline;
+    }
+    .spinner {
+      border:4px solid #eee;
+      border-top:4px solid #000;
+      border-radius:50%;
+      width:20px;
+      height:20px;
+      animation:spin 1s linear infinite;
+      margin:10px 0;
+    }
+    @keyframes spin {
+      0%{transform:rotate(0deg)}
+      100%{transform:rotate(360deg)}
+    }
+    footer {
+      margin-top:40px;
+      font-size:12px;
+      color:#777;
+      text-align:center;
+    }
+    @media(max-width:700px){
+      .container {
+        flex-direction:column;
+        padding:0 12px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <main class="card">
       <h1>Rodrigo Nery</h1>
       <h2>Desenvolvedor | Python • PHP • JavaScript • etc.</h2>
-      <p>Crio sistemas rápidos, limpos e eficientes para internet ou não.</p> 
+      <p>Crio sistemas rápidos, limpos e eficientes para internet ou não.</p>
       <p>Sites, aplicativos, automações e tudo que respira código.</p>
       <a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i> Fale comigo</a>
       <div class="social">
         <a href="https://github.com/rodrigo" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://instagram.com/rodrigonery_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
+      <section class="news-section">
+        <h3>📰 Últimas notícias</h3>
+        <div class="spinner" id="spinner-br"></div>
+        <ul id="news-br"></ul>
+      </section>
     </main>
-    <aside class="news-section">
-      <h3>📰 Últimas notícias</h3>
-      <div class="spinner" id="spinner-br"></div>
-      <ul id="news-br"></ul>
-    </aside>
   </div>
   <footer>© Copyright 2025 - Rodrigo Nery - rodrigonery@hotmail.com.br</footer>
-  <script>function fetchRSS(e,n){fetch(e).then(e=>e.json()).then(e=>n(e)).catch(()=>{document.getElementById("spinner-br").style.display="none";document.getElementById("news-br").innerHTML="<li>Erro ao carregar notícias.</li>"})}function renderNews(e){document.getElementById("spinner-br").style.display="none";const n=document.getElementById("news-br");n.innerHTML="";e.items.slice(0,5).forEach(e=>{const t=document.createElement("li");t.innerHTML=`<a href="${e.link}" target="_blank" rel="noopener">${e.title}</a>`,n.appendChild(t)})}document.addEventListener("DOMContentLoaded",()=>{const e=encodeURIComponent("https://g1.globo.com/rss/g1/"),n=`https://api.rss2json.com/v1/api.json?rss_url=${e}`;fetchRSS(n,renderNews)});</script>
+  <script>
+    function fetchRSS(url, callback){
+      fetch(url)
+        .then(res => res.json())
+        .then(data => callback(data))
+        .catch(() => {
+          document.getElementById("spinner-br").style.display = "none";
+          document.getElementById("news-br").innerHTML = "<li>Erro ao carregar notícias.</li>";
+        });
+    }
+    function renderNews(data){
+      document.getElementById("spinner-br").style.display = "none";
+      const list = document.getElementById("news-br");
+      list.innerHTML = "";
+      data.items.slice(0, 5).forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
+        list.appendChild(li);
+      });
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const feed = encodeURIComponent("https://g1.globo.com/rss/g1/");
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=${feed}`;
+      fetchRSS(url, renderNews);
+    });
+  </script>
 </body>
 </html>
