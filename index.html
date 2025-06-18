@@ -18,10 +18,10 @@
   <div class="container">
     <main class="card">
       <h1>Rodrigo Nery</h1>
-      <h2>Desenvolvedor | Python • PHP • JavaScript • LINUX • CyberSecurity </h2>
+      <h2>• Desenvolvedor • Python • PHP • JavaScript • LINUX • CyberSecurity •</h2>
       <p>Crio sistemas rápidos, limpos e eficientes para internet ou não.</p> 
       <p>Sites, aplicativos, automações e tudo que respira código.</p>
-      <a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i><center>Fale comigo</center></a>
+      <center><a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i>Fale comigo</a></center><
 
       <div class="social">
         <a href="https://github.com/rodrigo-x/" target="_blank" rel="noopener">
@@ -42,7 +42,7 @@
       </section>
     </main>
   </div>
-  <footer>rodrigonery@hotmail.com.br</footer>
+  <footer></footer>
 
   <script>
 function fetchRSS(e,n){fetch(e).then(e=>e.json()).then(e=>n(e)).catch(()=>{document.getElementById("spinner-br").style.display="none",document.getElementById("news-br").innerHTML="<li>Erro ao carregar not\xedcias.</li>"})}function renderNews(e){document.getElementById("spinner-br").style.display="none";let n=document.getElementById("news-br");n.innerHTML="",e.items.slice(0,5).forEach(e=>{let t=document.createElement("li");t.innerHTML=`<a href="${e.link}" target="_blank" rel="noopener">${e.title}</a>`,n.appendChild(t)})}document.addEventListener("DOMContentLoaded",()=>{let e=encodeURIComponent("https://g1.globo.com/rss/g1/"),n=`https://api.rss2json.com/v1/api.json?rss_url=${e}`;fetchRSS(n,renderNews)});
