@@ -34,7 +34,7 @@
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
-
+      
       <section class="news-section">
         <h3>📰 Últimas notícias</h3>
         <div class="spinner" id="spinner-br"></div>
@@ -42,6 +42,7 @@
       </section>
     </main>
   </div>
+  <footer>© 2025 Copyright by Rodrigo Nery</footer>
   <script>
 function fetchRSS(e,n){fetch(e).then(e=>e.json()).then(e=>n(e)).catch(()=>{document.getElementById("spinner-br").style.display="none",document.getElementById("news-br").innerHTML="<li>Erro ao carregar not\xedcias.</li>"})}function renderNews(e){document.getElementById("spinner-br").style.display="none";let n=document.getElementById("news-br");n.innerHTML="",e.items.slice(0,5).forEach(e=>{let t=document.createElement("li");t.innerHTML=`<a href="${e.link}" target="_blank" rel="noopener">${e.title}</a>`,n.appendChild(t)})}document.addEventListener("DOMContentLoaded",()=>{let e=encodeURIComponent("https://g1.globo.com/rss/g1/"),n=`https://api.rss2json.com/v1/api.json?rss_url=${e}`;fetchRSS(n,renderNews)});
   </script>
