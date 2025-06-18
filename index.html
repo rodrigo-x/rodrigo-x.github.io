@@ -58,20 +58,27 @@
       line-height:1.6;
     }
     .btn {
-      background-color:#000;
+      background:#000;
       color:#fff;
-      padding:12px 20px;
+      padding:14px 24px;
       border:none;
-      border-radius:6px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:600;
       text-decoration:none;
-      font-size:14px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition:opacity .3s ease;
+      display:inline-block;
+      perspective:800px;
+      transform-style:preserve-3d;
+      transform:rotateX(0) rotateY(0);
+      transition:transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+    .btn i {
+      margin-right:8px;
     }
     .btn:hover {
-      opacity:0.8;
+      transform:rotateX(12deg) rotateY(6deg) scale(1.03);
+      box-shadow:0 16px 40px rgba(0,0,0,0.4);
     }
     .social {
       margin-top:24px;
@@ -124,7 +131,7 @@
       100%{transform:rotate(360deg)}
     }
     footer {
-      margin-top:40px;
+      margin-top:20px;
       font-size:12px;
       color:#777;
       text-align:center;
@@ -144,7 +151,7 @@
       <h2>Desenvolvedor | Python • PHP • JavaScript • etc.</h2>
       <p>Crio sistemas rápidos, limpos e eficientes para internet ou não.</p>
       <p>Sites, aplicativos, automações e tudo que respira código.</p>
-      <a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i> Fale comigo</a>
+      <a class="btn" href="mailto:rodrigonery@hotmail.com.br"><i class="fas fa-envelope"></i>Fale comigo</a>
       <div class="social">
         <a href="https://github.com/rodrigo" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://instagram.com/rodrigonery_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -156,7 +163,7 @@
       </section>
     </main>
   </div>
-  <footer>© Copyright 2025 - Rodrigo Nery - rodrigonery@hotmail.com.br</footer>
+  <footer>© 2025 - Rodrigo Nery - rodrigonery@hotmail.com.br</footer>
   <script>
     function fetchRSS(url, callback){
       fetch(url)
