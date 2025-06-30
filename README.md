@@ -6,10 +6,8 @@ Aqui tem:
 
 - Design minimalista preto e branco com fonte Ubuntu, pra passar profissionalismo e clareza
 - Contato direto por email e links para GitHub e Instagram
-- Feed dinâmico de últimas notícias, direto no seu cartão (sem frescura)
 - Layout responsivo que funciona de boas em qualquer dispositivo, do celular ao desktop
 - Código HTML5 moderno, CSS enxuto e JS puro, tudo bem organizado e comentado
-- Um favicon personalizado que representa o Rodrigo na medida certa
 
 ---
 
@@ -28,6 +26,7 @@ Rodrigo Nery - Desenvolvedor
 Contato: rodrigonery@hotmail.com.br  
 Instagram: [@rodrigonery_](https://instagram.com/rodrigonery_)  
 GitHub: [rodrigo](https://github.com/rodrigo-x)
+Online: [rodrigo](https://rodrigo-x.github.io)
 
 ---
 
