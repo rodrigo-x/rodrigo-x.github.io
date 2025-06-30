@@ -26,7 +26,7 @@ Rodrigo Nery - Desenvolvedor
 Contato: rodrigonery@hotmail.com.br  
 Instagram: [@rodrigonery_](https://instagram.com/rodrigonery_)  
 GitHub: [rodrigo](https://github.com/rodrigo-x)
-Online: [rodrigo](https://rodrigo-x.github.io)
+Online: [site](https://rodrigo-x.github.io)
 
 ---
 
