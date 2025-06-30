@@ -4,10 +4,10 @@ Se liga nesse cartão de visitas digital ultra clean e responsivo, feito sob med
 
 Aqui tem:
 
-- Design minimalista preto e branco com fonte Ubuntu, pra passar profissionalismo e clareza
+- Design minimalista preto e branco com fonte: 'Rajdhani', sans-serif, pra passar profissionalismo e clareza
 - Contato direto por email e links para GitHub e Instagram
 - Layout responsivo que funciona de boas em qualquer dispositivo, do celular ao desktop
-- Código HTML5 moderno, CSS enxuto e JS puro, tudo bem organizado e comentado
+- Código HTML5 moderno, CSS enxuto e JS puro, tudo bem organizado.
 
 ---
 
