@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rodrigo Nery - Desenvolvedor Full Stack especializado em tecnologias modernas">
+    <meta name="keywords" content="desenvolvedor, programador, web developer, python, javascript, react, flask">
+    <meta name="author" content="Rodrigo Nery">
+    <meta property="og:title" content="Rodrigo Nery - Desenvolvedor">
+    <meta property="og:description"
+        content="Portfólio profissional de Rodrigo Nery, desenvolvedor apaixonado por tecnologia">
+    <meta property="og:type" content="website">
+    <title>Rodrigo Nery - Cartão interativo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="grid-bg"></div>
+    </div>
+
+    <!-- Main Card Container -->
+    <div class="card-container">
+        <div class="digital-card">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h1 class="name">Rodrigo Nery</h1>
+                <p class="title">Desenvolvedor Full Stack</p>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-php"></i>
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-terminal"></i>
+                        <span>Shell</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-freebsd"></i>
+                        <span>FreeBSD</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-section">
+                <h2 class="section-title">Contato</h2>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="3e57c2cb-4dd6-49f4-99b2-d0bd8806a266">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-input" id="name" placeholder="" required>
+                        <label class="form-label" for="name">Nome</label>
+                        <div class="error-message" id="error-name"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" id="email" placeholder="" required>
+                        <label class="form-label" for="email">Email</label>
+                        <div class="error-message" id="error-email"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder=""
+                            maxlength="500" required></textarea>
+                        <label class="form-label" for="message">Mensagem</label>
+                        <div class="character-count" id="char-count">0/500</div>
+                        <div class="error-message" id="error-message"></div>
+                    </div>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <input type="hidden" name="redirect" value="https://rodrigo-x.github.io/">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-section">
+                <h2 class="section-title">Redes Sociais</h2>
+                <div class="social-links">
+                    <a href="https://api.whatsapp.com/send/?phone=5574981277696&text&type=phone_number&app_absent=0"
+                        class="social-link" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rodrigonery_/" class="social-link" target="_blank"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/rodrigo-x/" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:rodrigonery@hotmail.com.br?subject=FullStackDev&body=Oi." class="social-link"
+                        target="_blank" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
